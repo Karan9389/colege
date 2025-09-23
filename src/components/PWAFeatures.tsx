@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { toast } from 'sonner@2.0.3';
-import { Download, Wifi, WifiOff, RefreshCw } from 'lucide-react';
+import { Download, Wifi, WifiOff, RefreshCw, Smartphone, X } from 'lucide-react';
 
 interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
@@ -16,6 +16,8 @@ export default function PWAFeatures() {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isUpdateAvailable, setIsUpdateAvailable] = useState(false);
   const [serviceWorkerRegistration, setServiceWorkerRegistration] = useState<ServiceWorkerRegistration | null>(null);
+  const [showInstallIcon, setShowInstallIcon] = useState(false);
+  const [installPromptDismissed, setInstallPromptDismissed] = useState(false);
 
   useEffect(() => {
     // Check if app is already installed
@@ -23,20 +25,30 @@ export default function PWAFeatures() {
       if (window.matchMedia('(display-mode: standalone)').matches || 
           (window.navigator as any).standalone === true) {
         setIsInstalled(true);
+        setShowInstallIcon(false);
       }
     };
     checkInstalled();
+
+    // Check if install prompt was previously dismissed
+    const dismissed = localStorage.getItem('pwa-install-dismissed');
+    if (dismissed) {
+      setInstallPromptDismissed(true);
+    }
 
     // Listen for install prompt
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
+      setShowInstallIcon(true);
     };
 
     // Listen for app installed
     const handleAppInstalled = () => {
       setIsInstalled(true);
       setDeferredPrompt(null);
+      setShowInstallIcon(false);
+      localStorage.removeItem('pwa-install-dismissed');
       toast('🎉 CityBus Go installed successfully!');
     };
 
@@ -98,14 +110,25 @@ export default function PWAFeatures() {
       
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the install prompt');
+        toast('🚀 Installing CityBus Go...');
       } else {
         console.log('User dismissed the install prompt');
+        setInstallPromptDismissed(true);
+        localStorage.setItem('pwa-install-dismissed', 'true');
       }
       
       setDeferredPrompt(null);
+      setShowInstallIcon(false);
     } catch (error) {
       console.error('Install prompt failed:', error);
     }
+  };
+
+  const dismissInstallIcon = () => {
+    setShowInstallIcon(false);
+    setInstallPromptDismissed(true);
+    localStorage.setItem('pwa-install-dismissed', 'true');
+    toast('You can always install CityBus Go from your browser menu later!');
   };
 
   const handleUpdateClick = () => {
@@ -163,8 +186,34 @@ export default function PWAFeatures() {
         </div>
       )}
 
-      {/* Install Prompt */}
-      {deferredPrompt && !isInstalled && (
+      {/* Dedicated Install Icon - Top Left */}
+      {showInstallIcon && deferredPrompt && !isInstalled && !installPromptDismissed && (
+        <div className="fixed top-4 left-4 z-50">
+          <Card className="p-2 shadow-lg border-2 border-blue-500 bg-white">
+            <div className="flex items-center gap-2">
+              <Button
+                onClick={handleInstallClick}
+                size="sm"
+                className="bg-blue-600 text-white hover:bg-blue-700 px-3"
+              >
+                <Smartphone className="w-4 h-4 mr-1" />
+                Install App
+              </Button>
+              <Button
+                onClick={dismissInstallIcon}
+                variant="ghost"
+                size="sm"
+                className="p-1 h-8 w-8 text-gray-500 hover:text-gray-700"
+              >
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+          </Card>
+        </div>
+      )}
+
+      {/* Fallback Install Prompt (Bottom Banner) - Only shows if icon was dismissed */}
+      {deferredPrompt && !isInstalled && installPromptDismissed && (
         <Card className="fixed bottom-4 left-4 right-4 z-40 p-4 mx-auto max-w-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0">
           <div className="flex items-center justify-between">
             <div className="flex-1">
