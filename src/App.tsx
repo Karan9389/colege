@@ -16,6 +16,7 @@ import DriverEdit from './components/DriverEdit';
 import CommuterSearch from './components/CommuterSearch';
 import BusList from './components/BusList';
 import MapScreen from './components/MapScreen';
+import PWAFeatures from './components/PWAFeatures';
 
 export type Screen = 
   | 'welcome' 
@@ -54,6 +55,20 @@ export default function App() {
   const [searchResults, setSearchResults] = useState<RouteConfig[]>([]);
   const [trackingBus, setTrackingBus] = useState<string>('');
 
+  // Handle PWA shortcuts on app load
+  useEffect(() => {
+    const shortcut = localStorage.getItem('pwa-shortcut');
+    if (shortcut === 'driver') {
+      localStorage.removeItem('pwa-shortcut');
+      showScreen('driverLogin');
+      toast('Welcome to Driver Portal! 🚌');
+    } else if (shortcut === 'commuter') {
+      localStorage.removeItem('pwa-shortcut');
+      showScreen('commuterSearch');
+      toast('Let\'s find your bus! 🔍');
+    }
+  }, []);
+
   const showScreen = (screen: Screen) => {
     setScreenHistory(prev => [...prev, screen]);
     setCurrentScreen(screen);
@@ -78,12 +93,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden relative" style={{ height: '700px' }}>
-        
-        {currentScreen === 'welcome' && (
-          <WelcomeScreen onShowScreen={showScreen} />
-        )}
+    <>
+      {/* PWA Features Component */}
+      <PWAFeatures />
+      
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <div className="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden relative" style={{ height: '700px' }}>
+          
+          {currentScreen === 'welcome' && (
+            <WelcomeScreen onShowScreen={showScreen} />
+          )}
 
         {currentScreen === 'driverLogin' && (
           <DriverLogin 
@@ -160,7 +179,8 @@ export default function App() {
           />
         )}
 
+        </div>
       </div>
-    </div>
+    </>
   );
 }
