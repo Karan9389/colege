@@ -13,34 +13,52 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiByeD0iMTYiIGZpbGw9IiMzYjgyZjYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYsIDE2KSI+Cjxzdmcgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cmVjdCB4PSIyIiB5PSI2IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxyZWN0IHg9IjEzIiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxyZWN0IHg9IjExLjUiIHk9IjEyIiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxjaXJjbGUgY3g9IjYiIGN5PSIxOCIgcj0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyMSIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMCIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjEuNSIgY3k9IjEwIiByPSIwLjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjIxLjUiIGN5PSIxMiIgcj0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI2IiB5PSI0IiB3aWR0aD0iMTIiIGhlaWdodD0iMS41IiByeD0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9nPgo8L3N2Zz4=",
+      "src": "/citybus-icon.svg",
       "sizes": "72x72",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMjAiIGZpbGw9IiMzYjgyZjYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQsIDI0KSI+Cjxzdmcgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cmVjdCB4PSIyIiB5PSI2IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxyZWN0IHg9IjEzIiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxyZWN0IHg9IjExLjUiIHk9IjEyIiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxjaXJjbGUgY3g9IjYiIGN5PSIxOCIgcj0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyMSIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMCIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjEuNSIgY3k9IjEwIiByPSIwLjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjIxLjUiIGN5PSIxMiIgcj0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI2IiB5PSI0IiB3aWR0aD0iMTIiIGhlaWdodD0iMS41IiByeD0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9nPgo8L3N2Zz4=",
+      "src": "/citybus-icon.svg",
       "sizes": "96x96",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iNDAiIGZpbGw9IiMzYjgyZjYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDgsIDQ4KSI+Cjxzdmcgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cmVjdCB4PSIyIiB5PSI2IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxyZWN0IHg9IjEzIiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxyZWN0IHg9IjExLjUiIHk9IjEyIiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiBmaWxsPSIjM2I4MmY2Ii8+CjxjaXJjbGUgY3g9IjYiIGN5PSIxOCIgcj0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyMSIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMCIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjEuNSIgY3k9IjEwIiByPSIwLjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjIxLjUiIGN5PSIxMiIgcj0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI2IiB5PSI0IiB3aWR0aD0iMTIiIGhlaWdodD0iMS41IiByeD0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9nPgo8L3N2Zz4=",
+      "src": "/citybus-icon.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/citybus-icon.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/citybus-icon.svg",
+      "sizes": "152x152",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/citybus-icon.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "citybus-icon.svg",
+      "src": "/citybus-icon.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/citybus-icon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
-    },
-    {
-      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTIwIiBmaWxsPSIjM2I4MmY2Ii8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyOCwgMTI4KSI+Cjxzdmcgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSI+CjxyZWN0IHg9IjIiIHk9IjYiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgcng9IjIiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjQiIHk9IjgiIHdpZHRoPSI3IiBoZWlnaHQ9IjMiIGZpbGw9IiMzYjgyZjYiLz4KPHJlY3QgeD0iMTMiIHk9IjgiIHdpZHRoPSI3IiBoZWlnaHQ9IjMiIGZpbGw9IiMzYjgyZjYiLz4KPHJlY3QgeD0iMTEuNSIgeT0iMTIiIHdpZHRoPSIxIiBoZWlnaHQ9IjMiIGZpbGw9IiMzYjgyZjYiLz4KPGNpcmNsZSBjeD0iNiIgY3k9IjE4IiByPSIyIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iMTgiIGN5PSIxOCIgcj0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjIxIiB5PSI5IiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiByeD0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIwIiB5PSI5IiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiByeD0iMC41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIyMS41IiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjEuNSIgY3k9IjEyIiByPSIwLjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjYiIHk9IjQiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxLjUiIHJ4PSIwLjUiIGZpbGw9IndoaXRlIi8+Cjx0ZXh0IHg9IjciIHk9IjIuNSIgZm9udC1zaXplPSIxLjIiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+R088L3RleHQ+CjwvdXNnPgo8L2c+Cjwvc3ZnPg==",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
     }
   ],
   "shortcuts": [
@@ -50,8 +68,9 @@
       "description": "Quick access to driver features",
       "icons": [
         {
-          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMjAiIGZpbGw9IiMxMGI5ODEiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQsIDI0KSI+Cjxzdmcgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cmVjdCB4PSIyIiB5PSI2IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjMTBiOTgxIi8+CjxyZWN0IHg9IjEzIiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjMTBiOTgxIi8+CjxyZWN0IHg9IjExLjUiIHk9IjEyIiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiBmaWxsPSIjMTBiOTgxIi8+CjxjaXJjbGUgY3g9IjYiIGN5PSIxOCIgcj0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyMSIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMCIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI0IiByPSIyIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTAgMTcuNWMwLTEuNSAxLTIuNSAyLTIuNXMyIDEgMiAyLjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIi8+CjwvdXNnPgo8L2c+Cjwvc3ZnPg==",
-          "sizes": "96x96"
+          "src": "/citybus-icon.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
         }
       ]
     },
@@ -61,8 +80,9 @@
       "description": "Search and track buses",
       "icons": [
         {
-          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMjAiIGZpbGw9IiNmNTk3MmYiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQsIDI0KSI+Cjxzdmcgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPgo8cmVjdCB4PSIyIiB5PSI2IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjZjU5NzJmIi8+CjxyZWN0IHg9IjEzIiB5PSI4IiB3aWR0aD0iNyIgaGVpZ2h0PSIzIiBmaWxsPSIjZjU5NzJmIi8+CjxyZWN0IHg9IjExLjUiIHk9IjEyIiB3aWR0aD0iMSIgaGVpZ2h0PSIzIiBmaWxsPSIjZjU5NzJmIi8+CjxjaXJjbGUgY3g9IjYiIGN5PSIxOCIgcj0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyMSIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMCIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMyIgcng9IjAuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTEiIGN5PSI0IiByPSI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJtMTcgMTctMi41LTIuNSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+CjwvZz4KPC9zdmc+",
-          "sizes": "96x96"
+          "src": "/citybus-icon.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
         }
       ]
     }
