@@ -1,20 +1,10 @@
 {
   "name": "CityBus Go - Live Bus Tracking",
   "short_name": "CityBus Go",
-  "description": "Real-time bus tracking app for drivers and commuters",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3b82f6",
-  "orientation": "portrait",
-  "scope": "/",
-  "categories": [
-    "travel",
-    "navigation",
-    "utilities"
-  ],
-  "lang": "en",
-  "dir": "ltr",
   "icons": [
     {
       "src": "icon-192x192.png",
@@ -29,8 +19,21 @@
     {
       "src": "icon-512x512-maskable.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile_view.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/desktop_view.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "form_factor": "wide"
     }
   ],
   "shortcuts": [
@@ -40,7 +43,7 @@
       "description": "Quick access to driver features",
       "icons": [
         {
-          "src": "/citybus-icon.svg",
+          "src": "citybus-icon.svg",
           "sizes": "96x96",
           "type": "image/svg+xml"
         }
@@ -52,9 +55,9 @@
       "description": "Search and track buses",
       "icons": [
         {
-          "src": "/citybus-icon.svg",
+          "src": "citybus-icon.svg",
           "sizes": "96x96",
-          "type": "image/svg+xml"
+          "type": "image/svg"
         }
       ]
     }
