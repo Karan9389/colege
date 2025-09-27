@@ -105,6 +105,15 @@ export default function WelcomeScreen({ onShowScreen }: WelcomeScreenProps) {
           <Search className="mr-3 group-hover:scale-110 transition-transform" size={20} />
           Find My Bus
         </Button>
+        
+        <Button 
+          onClick={() => onShowScreen('adminLogin')}
+          className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-white/20 py-4 rounded-2xl transition-all duration-300 group text-sm"
+          variant="outline"
+        >
+          <UserCog className="mr-2 group-hover:rotate-12 transition-transform" size={16} />
+          Admin Portal
+        </Button>
       </motion.div>
 
       {/* Bottom Accent */}

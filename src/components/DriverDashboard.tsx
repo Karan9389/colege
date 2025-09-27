@@ -78,33 +78,55 @@ export default function DriverDashboard({ loggedInDriver, onShowScreen, onLogout
   }
 
   return (
-    <div className="h-full flex flex-col p-6">
-      
+    <div className="h-full flex flex-col">
       {/* Header */}
-      <motion.div 
-        className="text-center mb-8"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="relative">
-          <Avatar className="mx-auto mb-4 w-16 h-16">
-            <AvatarFallback className="bg-indigo-100 text-indigo-600">
-              {loggedInDriver.name.charAt(0).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => onShowScreen('driverEdit')}
-            className="absolute top-0 right-0 p-2 hover:bg-gray-100 rounded-full"
-          >
-            <Edit size={16} />
-          </Button>
-        </div>
-        <h2>Welcome, {loggedInDriver.name}</h2>
-        <p className="text-muted-foreground">Driver Dashboard</p>
-      </motion.div>
+      <div className="flex items-center justify-between p-4 border-b bg-white">
+        <Button 
+          variant="outline" 
+          size="sm"
+          onClick={() => onShowScreen('driverConfig')}
+          className="flex items-center gap-2"
+        >
+          <Route size={16} />
+          Edit Route
+        </Button>
+        <h1 className="font-semibold">Driver Dashboard</h1>
+        <Button 
+          variant="ghost" 
+          size="sm"
+          onClick={handleLogout}
+          className="p-2 hover:bg-gray-100 rounded-full text-red-600"
+        >
+          <LogOut size={18} />
+        </Button>
+      </div>
+
+      <div className="flex-1 p-6 overflow-y-auto">
+        {/* Welcome Section */}
+        <motion.div 
+          className="text-center mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="relative">
+            <Avatar className="mx-auto mb-4 w-16 h-16">
+              <AvatarFallback className="bg-indigo-100 text-indigo-600">
+                {loggedInDriver.name.charAt(0).toUpperCase()}
+              </AvatarFallback>
+            </Avatar>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => onShowScreen('driverEdit')}
+              className="absolute top-0 right-0 p-2 hover:bg-gray-100 rounded-full"
+            >
+              <Edit size={16} />
+            </Button>
+          </div>
+          <h2>Welcome, {loggedInDriver.name}</h2>
+          <p className="text-muted-foreground">Ready to start your route</p>
+        </motion.div>
 
       {/* Route Information */}
       <motion.div 
@@ -217,21 +239,13 @@ export default function DriverDashboard({ loggedInDriver, onShowScreen, onLogout
         <Button 
           variant="outline" 
           onClick={() => onShowScreen('driverEdit')}
-          className="w-full h-12 mb-3"
+          className="w-full h-12"
         >
           <Edit className="mr-2" size={18} />
           Edit Profile
         </Button>
-
-        <Button 
-          variant="outline" 
-          onClick={handleLogout}
-          className="w-full h-12 text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground"
-        >
-          <LogOut className="mr-2" size={18} />
-          Logout
-        </Button>
       </motion.div>
+      </div>
     </div>
   );
 }

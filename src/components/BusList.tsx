@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { ArrowLeft, Bus, Clock, MapPin, Navigation, Wifi, WifiOff } from 'lucide-react';
+import { ArrowLeft, Bus, Clock, MapPin, Navigation, Wifi, WifiOff, Home } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { Screen, RouteConfig } from '../App';
 
@@ -11,9 +11,10 @@ interface BusListProps {
   onShowScreen: (screen: Screen) => void;
   onGoBack: () => void;
   onTrackBus: (busId: string) => void;
+  onGoHome: () => void;
 }
 
-export default function BusList({ searchResults, onShowScreen, onGoBack, onTrackBus }: BusListProps) {
+export default function BusList({ searchResults, onShowScreen, onGoBack, onTrackBus, onGoHome }: BusListProps) {
   
   const checkBusOnline = (routeId: string) => {
     const locationData = localStorage.getItem(`bus_location_${routeId}`);
@@ -28,19 +29,29 @@ export default function BusList({ searchResults, onShowScreen, onGoBack, onTrack
     <div className="h-full flex flex-col p-6">
       
       {/* Header */}
-      <div className="flex items-center mb-6">
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center">
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={onGoBack}
+            className="p-2 hover:bg-gray-100 rounded-full"
+          >
+            <ArrowLeft size={20} />
+          </Button>
+          <div className="ml-4">
+            <h2>Available Buses</h2>
+            <p className="text-sm text-muted-foreground">{searchResults.length} buses found</p>
+          </div>
+        </div>
         <Button 
           variant="ghost" 
           size="sm"
-          onClick={onGoBack}
+          onClick={onGoHome}
           className="p-2 hover:bg-gray-100 rounded-full"
         >
-          <ArrowLeft size={20} />
+          <Home size={20} />
         </Button>
-        <div className="ml-4">
-          <h2>Available Buses</h2>
-          <p className="text-sm text-muted-foreground">{searchResults.length} buses found</p>
-        </div>
       </div>
 
       {/* Bus List */}

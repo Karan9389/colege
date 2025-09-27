@@ -17,6 +17,10 @@ import CommuterSearch from './components/CommuterSearch';
 import BusList from './components/BusList';
 import MapScreen from './components/MapScreen';
 import PWAFeatures from './components/PWAFeatures';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
+import AdminDriverDetail from './components/AdminDriverDetail';
+import AdminDriverCreate from './components/AdminDriverCreate';
 
 export type Screen = 
   | 'welcome' 
@@ -27,11 +31,21 @@ export type Screen =
   | 'driverEdit'
   | 'commuterSearch'
   | 'busList'
-  | 'map';
+  | 'map'
+  | 'adminLogin'
+  | 'adminDashboard'
+  | 'adminDriverDetail'
+  | 'adminDriverCreate';
 
 export interface Driver {
+  id: string;
   name: string;
   phone: string;
+  password: string;
+}
+
+export interface Admin {
+  username: string;
   password: string;
 }
 
@@ -52,17 +66,32 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
   const [screenHistory, setScreenHistory] = useState<Screen[]>(['welcome']);
   const [loggedInDriver, setLoggedInDriver] = useState<Driver | null>(null);
+  const [loggedInAdmin, setLoggedInAdmin] = useState<Admin | null>(null);
+  const [selectedDriverId, setSelectedDriverId] = useState<string>('');
   const [searchResults, setSearchResults] = useState<RouteConfig[]>([]);
   const [trackingBus, setTrackingBus] = useState<string>('');
 
   // Handle PWA shortcuts on app load
   useEffect(() => {
-    const shortcut = localStorage.getItem('pwa-shortcut');
+    // Check URL parameters for shortcuts
+    const urlParams = new URLSearchParams(window.location.search);
+    const shortcut = urlParams.get('shortcut');
+    
     if (shortcut === 'driver') {
-      localStorage.removeItem('pwa-shortcut');
       showScreen('driverLogin');
       toast('Welcome to Driver Portal! 🚌');
     } else if (shortcut === 'commuter') {
+      showScreen('commuterSearch');
+      toast('Let\'s find your bus! 🔍');
+    }
+    
+    // Also check localStorage for backward compatibility
+    const storedShortcut = localStorage.getItem('pwa-shortcut');
+    if (storedShortcut === 'driver') {
+      localStorage.removeItem('pwa-shortcut');
+      showScreen('driverLogin');
+      toast('Welcome to Driver Portal! 🚌');
+    } else if (storedShortcut === 'commuter') {
       localStorage.removeItem('pwa-shortcut');
       showScreen('commuterSearch');
       toast('Let\'s find your bus! 🔍');
@@ -88,6 +117,13 @@ export default function App() {
     setCurrentScreen(screen);
   };
 
+  const goHome = () => {
+    setLoggedInDriver(null);
+    setLoggedInAdmin(null);
+    setSelectedDriverId('');
+    resetToScreen('welcome');
+  };
+
   const showNotification = (message: string) => {
     toast(message);
   };
@@ -110,6 +146,7 @@ export default function App() {
             onGoBack={goBack}
             onDriverLogin={setLoggedInDriver}
             onShowNotification={showNotification}
+            onGoHome={goHome}
           />
         )}
 
@@ -118,6 +155,8 @@ export default function App() {
             onShowScreen={showScreen}
             onGoBack={goBack}
             onShowNotification={showNotification}
+            onDriverLogin={setLoggedInDriver}
+            onGoHome={goHome}
           />
         )}
 
@@ -127,6 +166,7 @@ export default function App() {
             onShowScreen={showScreen}
             onGoBack={goBack}
             onShowNotification={showNotification}
+            onGoHome={goHome}
           />
         )}
 
@@ -138,6 +178,7 @@ export default function App() {
               setLoggedInDriver(null);
               resetToScreen('welcome');
             }}
+            onGoHome={goHome}
           />
         )}
 
@@ -147,6 +188,7 @@ export default function App() {
             onGoBack={goBack}
             onDriverUpdate={setLoggedInDriver}
             onShowNotification={showNotification}
+            onGoHome={goHome}
           />
         )}
 
@@ -156,6 +198,7 @@ export default function App() {
             onGoBack={goBack}
             onSearchResults={setSearchResults}
             onShowNotification={showNotification}
+            onGoHome={goHome}
           />
         )}
 
@@ -168,6 +211,7 @@ export default function App() {
               setTrackingBus(busId);
               showScreen('map');
             }}
+            onGoHome={goHome}
           />
         )}
 
@@ -176,6 +220,49 @@ export default function App() {
             trackingBus={trackingBus}
             onShowScreen={showScreen}
             onGoBack={goBack}
+            onGoHome={goHome}
+          />
+        )}
+
+        {currentScreen === 'adminLogin' && (
+          <AdminLogin 
+            onShowScreen={showScreen}
+            onGoBack={goBack}
+            onAdminLogin={setLoggedInAdmin}
+            onShowNotification={showNotification}
+            onGoHome={goHome}
+          />
+        )}
+
+        {currentScreen === 'adminDashboard' && (
+          <AdminDashboard 
+            loggedInAdmin={loggedInAdmin}
+            onShowScreen={showScreen}
+            onSelectDriver={setSelectedDriverId}
+            onLogout={() => {
+              setLoggedInAdmin(null);
+              resetToScreen('welcome');
+            }}
+            onGoHome={goHome}
+          />
+        )}
+
+        {currentScreen === 'adminDriverDetail' && (
+          <AdminDriverDetail 
+            driverId={selectedDriverId}
+            onShowScreen={showScreen}
+            onGoBack={goBack}
+            onShowNotification={showNotification}
+            onGoHome={goHome}
+          />
+        )}
+
+        {currentScreen === 'adminDriverCreate' && (
+          <AdminDriverCreate 
+            onShowScreen={showScreen}
+            onGoBack={goBack}
+            onShowNotification={showNotification}
+            onGoHome={goHome}
           />
         )}
 

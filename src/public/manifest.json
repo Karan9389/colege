@@ -1,66 +1,93 @@
 {
   "name": "CityBus Go - Live Bus Tracking",
   "short_name": "CityBus Go",
+  "description": "Real-time bus tracking app for drivers and commuters with live location sharing and route management",
+  "version": "1.0.0",
   "start_url": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
   "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "theme_color": "#3b82f6", 
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["travel", "navigation", "utilities", "transport"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "edge_side_panel": {},
   "icons": [
     {
-      "src": "icon-192x192.png",
+      "src": "/icon-72x72.png",
+      "sizes": "72x72",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "any"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "/icon-144x144.png", 
+      "sizes": "144x144",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any"
     },
     {
-      "src": "icon-512x512-maskable.png",
+      "src": "/citybus-192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any"
+    },
+    {
+      "src": "/citybus-512.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/citybus-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "screenshots": [
     {
-      "src": "screenshots/mobile_view.png",
+      "src": "/citybus-192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "540x720",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "screenshots/desktop_view.png",
-      "type": "image/png",
-      "sizes": "1280x720",
-      "form_factor": "wide"
+      "form_factor": "narrow",
+      "label": "CityBus Go mobile view"
     }
   ],
   "shortcuts": [
     {
       "name": "Driver Portal",
-      "url": "/?driver=true",
-      "description": "Quick access to driver features",
+      "short_name": "Driver",
+      "url": "/?shortcut=driver",
+      "description": "Quick access to driver features and route management",
       "icons": [
         {
-          "src": "citybus-icon.svg",
-          "sizes": "96x96",
-          "type": "image/svg+xml"
+          "src": "/citybus-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
     {
-      "name": "Find Buses",
-      "url": "/?commuter=true",
-      "description": "Search and track buses",
+      "name": "Find Buses", 
+      "short_name": "Commuter",
+      "url": "/?shortcut=commuter",
+      "description": "Search and track buses in real-time",
       "icons": [
         {
-          "src": "citybus-icon.svg",
-          "sizes": "96x96",
-          "type": "image/svg"
+          "src": "/citybus-192.png",
+          "sizes": "192x192", 
+          "type": "image/png"
         }
       ]
     }
-  ]
+  ],
+  "related_applications": [],
+  "file_handlers": [],
+  "protocol_handlers": [],
+  "launch_handler": {
+    "client_mode": "auto"
+  }
 }
-

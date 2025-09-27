@@ -120,8 +120,8 @@ self.addEventListener('push', (event) => {
   
   const options = {
     body: event.data ? event.data.text() : 'New bus update available',
-    icon: '/icon-192.png',
-    badge: '/icon-96.png',
+    icon: '/citybus-192.png',
+    badge: '/icon-72x72.png',
     vibrate: [200, 100, 200],
     data: {
       dateOfArrival: Date.now(),
@@ -131,12 +131,12 @@ self.addEventListener('push', (event) => {
       {
         action: 'view',
         title: 'View Details',
-        icon: '/icon-192.png'
+        icon: '/citybus-192.png'
       },
       {
         action: 'dismiss',
         title: 'Dismiss',
-        icon: '/icon-192.png'
+        icon: '/citybus-192.png'
       }
     ]
   };

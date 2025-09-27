@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { ArrowLeft, MapPin, Navigation, Search } from 'lucide-react';
+import { ArrowLeft, MapPin, Navigation, Search, Home } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form@7.55.0';
 import type { Screen, RouteConfig } from '../App';
@@ -13,6 +13,7 @@ interface CommuterSearchProps {
   onGoBack: () => void;
   onSearchResults: (results: RouteConfig[]) => void;
   onShowNotification: (message: string) => void;
+  onGoHome: () => void;
 }
 
 interface SearchFormData {
@@ -20,7 +21,7 @@ interface SearchFormData {
   destinationLocation: string;
 }
 
-export default function CommuterSearch({ onShowScreen, onGoBack, onSearchResults, onShowNotification }: CommuterSearchProps) {
+export default function CommuterSearch({ onShowScreen, onGoBack, onSearchResults, onShowNotification, onGoHome }: CommuterSearchProps) {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<SearchFormData>();
 
   const onSubmit = (data: SearchFormData) => {
@@ -68,28 +69,40 @@ export default function CommuterSearch({ onShowScreen, onGoBack, onSearchResults
   };
 
   return (
-    <div className="h-full flex flex-col p-6">
+    <div className="h-full flex flex-col overflow-hidden">
       
       {/* Header */}
-      <div className="flex items-center mb-8">
+      <div className="flex items-center justify-between p-6 pb-4 flex-shrink-0">
+        <div className="flex items-center">
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={onGoBack}
+            className="p-2 hover:bg-gray-100 rounded-full"
+          >
+            <ArrowLeft size={20} />
+          </Button>
+          <h2 className="ml-4">Find Your Bus</h2>
+        </div>
         <Button 
           variant="ghost" 
           size="sm"
-          onClick={onGoBack}
+          onClick={onGoHome}
           className="p-2 hover:bg-gray-100 rounded-full"
         >
-          <ArrowLeft size={20} />
+          <Home size={20} />
         </Button>
-        <h2 className="ml-4">Find Your Bus</h2>
       </div>
 
-      {/* Search Form */}
-      <motion.div 
-        className="flex-1 flex flex-col justify-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto px-6">
+        {/* Search Form */}
+        <motion.div 
+          className="flex flex-col justify-center min-h-full py-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
         <Card className="border-0 shadow-none">
           <CardHeader className="text-center pb-6">
             <div className="mx-auto bg-green-100 rounded-full p-4 w-fit mb-4">
@@ -167,19 +180,20 @@ export default function CommuterSearch({ onShowScreen, onGoBack, onSearchResults
           </CardContent>
         </Card>
 
-        {/* Tips */}
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-          <h4 className="flex items-center gap-2 mb-2">
-            <MapPin size={16} className="text-blue-600" />
-            Search Tips
-          </h4>
-          <ul className="text-sm text-blue-700 space-y-1">
-            <li>• Use popular landmarks or area names</li>
-            <li>• Try different variations if no results found</li>
-            <li>• Bus drivers add stops they service</li>
-          </ul>
-        </div>
-      </motion.div>
+          {/* Tips */}
+          <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+            <h4 className="flex items-center gap-2 mb-2">
+              <MapPin size={16} className="text-blue-600" />
+              Search Tips
+            </h4>
+            <ul className="text-sm text-blue-700 space-y-1">
+              <li>• Use popular landmarks or area names</li>
+              <li>• Try different variations if no results found</li>
+              <li>• Bus drivers add stops they service</li>
+            </ul>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
